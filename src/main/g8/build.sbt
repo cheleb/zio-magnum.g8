@@ -1,5 +1,5 @@
 val Versions = new {
-  val zio = "2.1.19"
+  val zio = "2.1.20"
   val testcontainers = "0.43.0"
   val munit = "1.1.1"
   val postgresDriver = "42.7.7"
