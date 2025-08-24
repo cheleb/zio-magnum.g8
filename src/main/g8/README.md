@@ -13,7 +13,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Getting Started
 
-Visit in the [src/main/scala](src/main/scala/$package$/ZIOMagnumDemo.scala) to see the demo code.
+Visit in the [src/main/scala](src/main/scala/$packaged$/ZIOMagnumDemo.scala) to see the demo code.
 
 
 Alternatively, you can run the tests using the following command:
