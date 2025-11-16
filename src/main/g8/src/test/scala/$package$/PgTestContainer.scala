@@ -2,14 +2,20 @@ package $package$
 
 import zio.*
 
+import com.augustnagro.magnum.SqlLogger
+
 import javax.sql.DataSource
 
 import org.postgresql.ds.PGSimpleDataSource
 import org.testcontainers.containers.PostgreSQLContainer
 
+
 /** A trait that provides a PostgreSQL container for integration tests.
   */
 trait PgTestContainer(init: String) {
+
+  given SqlLogger = SqlLogger.Default
+
   private def postgres(): PostgreSQLContainer[Nothing] =
     val container: PostgreSQLContainer[Nothing] =
       PostgreSQLContainer("postgres")

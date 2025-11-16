@@ -12,6 +12,8 @@ case class User(@Id id: Int, name: String) derives DbCodec
 
 object ZIOMagnumDemo extends zio.ZIOAppDefault:
 
+  given SqlLogger = SqlLogger.Default
+
   val repo = Repo[User, User, Int]
 
   private val program: RIO[DataSource, Unit] = repo.zInsert(User(0, "Alice"))
