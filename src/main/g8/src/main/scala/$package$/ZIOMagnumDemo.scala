@@ -19,7 +19,7 @@ object ZIOMagnumDemo extends zio.ZIOAppDefault:
   private val program: RIO[DataSource, Unit] = for
     _ <- repo
       .zInsert(User(0, "Alice"))
-      .tapError(err => zio.Console.printLineError(s"Insert error: $err"))
+      .tapError(err => zio.Console.printLineError(s"Insert error: \$err"))
       .ignore
     _ <- sql"SELECT * FROM users"
       .zStream[User]()
