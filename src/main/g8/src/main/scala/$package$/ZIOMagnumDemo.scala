@@ -16,7 +16,15 @@ object ZIOMagnumDemo extends zio.ZIOAppDefault:
 
   val repo = Repo[User, User, Int]
 
-  private val program: RIO[DataSource, Unit] = repo.zInsert(User(0, "Alice"))
+  private val program: RIO[DataSource, Unit] = for
+    _ <- repo
+      .zInsert(User(0, "Alice"))
+      .tapError(err => zio.Console.printLineError(s"Insert error: $err"))
+      .ignore
+    _ <- sql"SELECT * FROM users"
+      .zStream[User]()
+      .runForeach(user => zio.Console.printLine(user))
+  yield ()
 
   override def run = program
     .provide:
