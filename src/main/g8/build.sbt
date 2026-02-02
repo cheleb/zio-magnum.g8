@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
   "com.dimafeng" %% "testcontainers-scala-postgresql" % Versions.testcontainers % Test,
   "org.postgresql" % "postgresql" % Versions.postgresDriver,
   "ch.qos.logback" % "logback-classic" % "1.5.23",
-  "dev.zio" %% "zio-logging-slf4j" % "2.5.2",
+  "dev.zio" %% "zio-logging-slf4j" % "2.5.3",
   "dev.zio" %% "zio-test" % Versions.zio % Test,
   "dev.zio" %% "zio-test-sbt" % Versions.zio % Test,
   "ch.qos.logback" % "logback-classic" % "1.5.23" % Test
